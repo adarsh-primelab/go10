@@ -1,0 +1,18 @@
+
+.header {
+  padding: 0px !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff !important;
+}
+.trigger {
+  padding-left: 16px;
+  font-size: 18px;
+}
+
+.title {
+  margin-top: 10px;
+  padding-left: 15px;
+}

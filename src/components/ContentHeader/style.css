@@ -1,0 +1,10 @@
+.contentHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 15px;
+}
+.contentHeader button{
+    margin-right: 10px;
+}

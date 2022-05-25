@@ -1,0 +1,7 @@
+ .main {
+   height: calc(100vh - 64px);
+   overflow-x: hidden;
+   margin: 0px 0px;
+   padding: 16px;
+   overflow-y: auto; 
+ }

@@ -1,0 +1,36 @@
+.nodes {
+  padding: 16px;
+}
+
+.nodes .block {
+  width: 100%;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.nodes .block img {
+  width: 80px;
+  max-width: 100%;
+}
+
+.nodes .ant-space-item {
+  padding: 20px 10px;
+}
+
+.nodes .ant-typography {
+  text-overflow: ellipsis;
+  max-width: 145px;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+}
+
+.nodes .status{
+position: absolute;
+right: 0;
+}
