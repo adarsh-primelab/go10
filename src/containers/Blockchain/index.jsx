@@ -1,8 +1,8 @@
-import './style.css'
-import React, { useState } from 'react'
-import { Col, Row, Drawer, Space, Button, Typography, Badge } from 'antd'
-import ContentHeader from '../../components/ContentHeader';
-import { GetBlockchains } from '../../services/Blockchain';
+import "./style.css";
+import React, { useState } from "react";
+import { Col, Row, Drawer, Space, Button, Typography, Badge } from "antd";
+import ContentHeader from "../../components/ContentHeader";
+import { GetBlockchains } from "../../services/Blockchain";
 
 const { Text } = Typography;
 
@@ -11,18 +11,16 @@ const statusIndicator = {
   Success: "success",
   Error: "error",
   Warning: "warning",
-  Default: "default"
-}
+  Default: "default",
+};
 
 const statusTextIndicator = {
   Processing: "secondary",
   Success: "success",
   Error: "danger",
   Warning: "warning",
-  Default: ""
-}
-
-
+  Default: "",
+};
 
 export default function Blockchain() {
   const [visible, setVisible] = useState(false);
@@ -30,28 +28,34 @@ export default function Blockchain() {
 
   const showDrawer = (block) => {
     setVisible(true);
-    setselectedBlock(block)
+    setselectedBlock(block);
   };
 
   const onClose = () => {
     setVisible(false);
-    setselectedBlock(null)
+    setselectedBlock(null);
   };
-  const { data: blocks, isLoading } = GetBlockchains()
+  const { data: blocks, isLoading } = GetBlockchains();
   return (
-    <div className='blockchain'>
+    <div className="blockchain">
       <ContentHeader onRefresh />
       <Row gutter={[20, 20]}>
-        {
-          !isLoading && blocks && blocks.length > 0 && blocks.map(block => <Col key={block.id} span={4}>
-            <div className='block' onClick={() => showDrawer(block)} >
-              <Badge status={statusIndicator[block.status]} className='status' />
-              <Space direction="vertical">
-                <Text >{block.id}</Text>
-              </Space>
-            </div>
-          </Col>)
-        }
+        {!isLoading &&
+          blocks &&
+          blocks.length > 0 &&
+          blocks.map((block) => (
+            <Col key={block.id} span={4}>
+              <div className="block" onClick={() => showDrawer(block)}>
+                <Badge
+                  status={statusIndicator[block.status]}
+                  className="status"
+                />
+                <Space direction="vertical">
+                  <Text className="blockId">{block.id}</Text>
+                </Space>
+              </div>
+            </Col>
+          ))}
       </Row>
       <Drawer
         title="Block Infomation"
@@ -60,8 +64,10 @@ export default function Blockchain() {
         onClose={onClose}
         visible={visible}
         extra={
-          <Space >
-            <Button onClick={onClose}>Cancel</Button>
+          <Space>
+            <Button type="link" onClick={onClose}>
+              Cancel
+            </Button>
             <Button type="primary" onClick={onClose}>
               OK
             </Button>
@@ -69,9 +75,14 @@ export default function Blockchain() {
         }
       >
         <p>Id :-{selectedBlock?.id}</p>
-        <p>Status :-  <Text type={statusTextIndicator[selectedBlock?.status]}>{selectedBlock?.status}</Text> </p>
+        <p>
+          Status :-{" "}
+          <Text type={statusTextIndicator[selectedBlock?.status]}>
+            {selectedBlock?.status}
+          </Text>{" "}
+        </p>
         <p>Some contents...</p>
       </Drawer>
     </div>
-  )
+  );
 }

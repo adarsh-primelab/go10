@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ant-drawer .ant-drawer-content {
+  border-radius: 20px 0px 0px 20px;
+}
+
+.ant-card {
+  border-radius: 15px !important;
+}
+
+.ant-btn {
+  border-radius: 12px !important;
+}
+
+.ant-badge-status-dot {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.blockId{
+  font-weight: 500;
+  font-size: 24px;
+  color: rgba(128, 128, 128, 0.646) !important;
+}
